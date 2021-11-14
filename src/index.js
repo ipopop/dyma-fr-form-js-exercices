@@ -1,19 +1,10 @@
 export function testFn(nombre) {
   // Déclarez en dessous :
-  let texte = '';
-
-  if ((typeof nombre) !== 'number') {
+  if (typeof nombre !== 'number' || isNaN(nombre)){
     return 'Pas un nombre';
-  } else {
-    for (let i = 0; i < 5; i++) {
-      let acc;
-      if (i === 2) {
-        continue;
-      } else {
-        acc = nombre + i;
-      }
-      texte = ''.concat(texte, acc)
-    }
+  } else if (!Number.isInteger(nombre)) {
+    nombre = Number((+nombre).toFixed(3));
   }
-  return texte;
+  // Ne touchez pas au return :
+  return nombre;
 }
