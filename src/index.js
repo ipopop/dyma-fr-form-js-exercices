@@ -1,10 +1,6 @@
-export function testFn(nombre) {
+export function testFn() {
   // Déclarez en dessous :
-  if (typeof nombre !== 'number' || isNaN(nombre)){
-    return 'Pas un nombre';
-  } else if (!Number.isInteger(nombre)) {
-    nombre = Number((+nombre).toFixed(3));
-  }
+  let aleatoire = Math.floor(Math.random() * 11);
   // Ne touchez pas au return :
-  return nombre;
+  return aleatoire;
 }
