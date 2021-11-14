@@ -1,29 +1,19 @@
-export function testFn(note) {
+export function testFn(nombre) {
   // Déclarez en dessous :
-  let remarque;
+  let texte = '';
 
-  switch (note) {
-    case 5:
-      remarque = 'Excellent';
-      break;
-    case 4:
-      remarque = 'Très bien';
-      break;
-    case 3:
-      remarque = 'Bien';
-      break;
-    case 2:
-      remarque = 'Moyen';
-      break;
-    case 1:
-    case 0:
-      remarque = 'Médiocre';
-      break;
-    default:
-      remarque = 'La note doit être un nombre compris entre 0 et 5';
-    break;
-  };
-
-  // Ne touchez pas au return.
-  return remarque;
+  if ((typeof nombre) !== 'number') {
+    return 'Pas un nombre';
+  } else {
+    for (let i = 0; i < 5; i++) {
+      let acc;
+      if (i === 2) {
+        continue;
+      } else {
+        acc = nombre + i;
+      }
+      texte = ''.concat(texte, acc)
+    }
+  }
+  return texte;
 }
