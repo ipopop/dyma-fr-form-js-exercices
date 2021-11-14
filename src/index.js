@@ -1,6 +1,6 @@
-export function testFn(cb) {
+export function testFn(fichier) {
   // Déclarez en dessous :
-  let reponse = cb.slice(-4).padStart(cb.length, '*');
+  let reponse = fichier.match(/(\w+$)/igm).toString();
   // Ne touchez pas au return :
   return reponse;
 }
