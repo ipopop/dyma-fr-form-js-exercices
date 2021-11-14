@@ -1,11 +1,7 @@
-export function testFn() {
+export function testFn(prop, valeur) {
   // Déclarez en dessous :
-  const personne = {
-    prenom: 'Charlotte',
-    nom: 'Atoutcompris',
-    adresse: 'Rue de la P',
-    age: 28
-  };
+  const objet = {};
+  objet[prop] = valeur;
   // Ne touchez pas au return :
-  return personne;
+  return objet;
 }
