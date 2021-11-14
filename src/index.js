@@ -1,6 +1,4 @@
-export function testFn(objet) {
-  // Déclarez en dessous :
-  const copie = JSON.parse(JSON.stringify(objet));
-  // Ne touchez pas au return :
-  return copie;
+export function pairOuImpair(n) {
+  let result = (n % 2) ? 'impair' : 'pair' 
+  return result
 }
