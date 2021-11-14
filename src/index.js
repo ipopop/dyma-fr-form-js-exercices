@@ -1,6 +1,6 @@
-export function testFn(objet1, objet2, objet3) {
+export function testFn(objet) {
   // Déclarez en dessous :
-  const objet = Object.assign(objet1, objet2, objet3);
+  const resultat = 'prenom' in objet && 'nom' in objet && typeof objet.prenom === 'string' && typeof objet.nom === 'string';
   // Ne touchez pas au return :
-  return objet;
+  return resultat;
 }
