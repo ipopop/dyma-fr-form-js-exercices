@@ -1,5 +1,5 @@
-export function lePlusGrand(a, b, c) {
-  const list = [a, b, c]
+export function plusGrandNombre(...args) {
+  const list = [...args]
   let i
   let max = -Infinity
   for (i = 0; i < list.length; i++) {
