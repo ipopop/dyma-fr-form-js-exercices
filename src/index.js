@@ -1,6 +1,11 @@
-var a = true;
-var b = 7;
-var c = 123456789012345678n;
-var d = 'chain';
+var a = 42;
+var b = 22;
+var result = a - b;
 
-export { a, b, c, d }
+var c = 'Essaye de concaténer ';
+var d = 'plusieurs ';
+var e = 'chaînes !';
+
+var concatenation = ''.concat(c, d, e);
+
+export { a, b, result, c, d, e, concatenation }
