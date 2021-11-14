@@ -1,7 +1,7 @@
-export function testFn(prop, valeur) {
+export function testFn(personne) {
   // Déclarez en dessous :
-  const objet = {};
-  objet[prop] = valeur;
+  const { familly: { father } } = personne;
+  const { firstname: prenom, lastname: nom } = father
   // Ne touchez pas au return :
-  return objet;
+  return { prenom, nom };
 }
