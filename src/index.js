@@ -1,7 +1,6 @@
-export function testFn(chaine) {
+export function testFn(phrase) {
   // Déclarez en dessous :
-  let lower = chaine.toLowerCase();
-  chaine = lower.charAt(0).toUpperCase() + lower.slice(1);
+  let reponse = phrase.trim().split(' ').length;
   // Ne touchez pas au return :
-  return chaine;
+  return reponse;
 }
