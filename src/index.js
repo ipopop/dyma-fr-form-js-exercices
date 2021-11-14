@@ -1,6 +1,11 @@
-export function testFn(fichier) {
+export function testFn() {
   // Déclarez en dessous :
-  let reponse = fichier.match(/(\w+$)/igm).toString();
+  const personne = {
+    prenom: 'Charlotte',
+    nom: 'Atoutcompris',
+    adresse: 'Rue de la P',
+    age: 28
+  };
   // Ne touchez pas au return :
-  return reponse;
+  return personne;
 }
