@@ -1,9 +1,29 @@
-export function testFn(condition, age) {
+export function testFn(note) {
   // Déclarez en dessous :
-  const a = 42;
-  const b = condition ? a : 0;
-  const statut = (age >= 21) ? 'Majeur aux USA' : (age >= 18) ? 'Majeur en France' : 'Mineur';
+  let remarque;
+
+  switch (note) {
+    case 5:
+      remarque = 'Excellent';
+      break;
+    case 4:
+      remarque = 'Très bien';
+      break;
+    case 3:
+      remarque = 'Bien';
+      break;
+    case 2:
+      remarque = 'Moyen';
+      break;
+    case 1:
+    case 0:
+      remarque = 'Médiocre';
+      break;
+    default:
+      remarque = 'La note doit être un nombre compris entre 0 et 5';
+    break;
+  };
 
   // Ne touchez pas au return.
-  return [b, statut];
+  return remarque;
 }
