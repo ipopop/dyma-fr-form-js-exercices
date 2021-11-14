@@ -1,40 +1,31 @@
-export function filtreFemmesEtAjouteNomComplet(array) {
-  return array
-    .filter((person) => person.genre === 'féminin')
-    .map((person) => ({
-      nomComplet: `${person.prenom} ${person.nom}`,
-      ...person,
-    }))
+export function compterElements(arr) {
+  const result = arr.reduce(function(prev, cur) {
+    prev[cur] = (prev[cur] || 0) + 1
+    return prev
+  }, {})
+  return result
 }
 
-// const test = [
-//   { prenom: 'Albert', nom: 'Einstein', genre: 'masculin' },
-//   { prenom: 'Isaac', nom: 'Newton', genre: 'masculin' },
-//   { prenom: 'Marie', nom: 'Curie', genre: 'féminin' },
-//   { prenom: 'Max', nom: 'Planck', genre: 'masculin' },
-//   { prenom: 'Simone', nom: 'de Beauvoir', genre: 'féminin' },
-//   { prenom: 'Rosalind', nom: 'Franklin', genre: 'féminin' },
+// const testList = [
+//   'veste',
+//   'clé',
+//   'verre',
+//   'chien',
+//   'biberon',
+//   'chien',
+//   'veste',
+//   'clé',
+//   'chien',
 // ]
-// filtreFemmesEtAjouteNomComplet(test)
+
+// compterElements(testList)
+
 
 // result
-// [
-//   {
-//     prenom: 'Simone',
-//     nom: 'de Beauvoir',
-//     nomComplet: 'Simone de Beauvoir',
-//     genre: 'féminin',
-//   },
-//   {
-//     prenom: 'Rosalind',
-//     nom: 'Franklin',
-//     nomComplet: 'Rosalind Franklin',
-//     genre: 'féminin',
-//   },
-//   {
-//     prenom: 'Marie',
-//     nom: 'Curie',
-//     nomComplet: 'Marie Curie',
-//     genre: 'féminin',
-//   },
-// ]
+// {
+//   veste: 2,
+//   clé: 2,
+//   verre: 1,
+//   chien: 3,
+//   biberon: 1,
+// }
