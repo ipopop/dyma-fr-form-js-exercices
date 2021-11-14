@@ -1,3 +1,1 @@
-export function substract(a, b) {
-  return (a - b);
-};
+export var nombre = 42;
