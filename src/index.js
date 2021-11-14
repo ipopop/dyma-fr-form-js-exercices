@@ -1,7 +1,6 @@
-export function testFn(personne) {
+export function testFn(objet1, objet2, objet3) {
   // Déclarez en dessous :
-  const { familly: { father } } = personne;
-  const { firstname: prenom, lastname: nom } = father
+  const objet = Object.assign(objet1, objet2, objet3);
   // Ne touchez pas au return :
-  return { prenom, nom };
+  return objet;
 }
