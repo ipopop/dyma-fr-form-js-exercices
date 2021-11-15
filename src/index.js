@@ -38,6 +38,10 @@ function createTodoElement(todo, index) {
     <span class="todo ${todo.done ? 'done' : ''}"></span>
     <p>${todo.text}</p>
   `
+  li.addEventListener('click', event => {
+    event.stopPropagation()
+    toggleTodo(index)
+  })
   li.append(btnDel)
   return li
 }
@@ -49,6 +53,11 @@ function addTodo(text) {
 
 function deleteTodo(index) {
   todos.splice(index, 1)
+  displayTodo()
+}
+
+function toggleTodo(index) {
+  todos[index].done = !todos[index].done
   displayTodo()
 }
 
