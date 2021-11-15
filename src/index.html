@@ -6,9 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Exercices Dyma</title>
     <script>
-      function supprimer() {
-        var d = document.getElementById("liste")
-        d.remove(d.selectedIndex)
+      function ajouterApres() {
+        const list = document.getElementById('liste')
+        list.add(new Option(list.selectedIndex + 1), list.selectedIndex + 1)
+        let i = list.selectedIndex
+        for ( i + 1; i < list.options.length; i++) {
+          list.options[i] = new Option(i + 1)
+        }
       }
     </script>
   </head>
@@ -19,6 +23,6 @@
       <option>3</option>
       <option>4</option>
     </select>
-    <button onclick="supprimer()">Supprimer l'option sélectionnée</button>
+    <button onclick="ajouterApres()">Ajoute une option après</button>
   </body>
 </html>
