@@ -6,7 +6,6 @@ const ul = document.querySelector('ul')
 const form = document.querySelector('form')
 const input = document.querySelector('form > input')
 
-/* Create an event listener on the form for the "submit" event */
 form.addEventListener('submit', (e) => {
   e.preventDefault()
   const data = input.value
@@ -29,18 +28,27 @@ function displayTodo() {
 
 function createTodoElement(todo, index) {
   const li = document.createElement('li')
+  const btnDel = document.createElement('button')
+  btnDel.innerHTML = 'Supprimer'
+  btnDel.addEventListener('click', e => {
+    e.stopPropagation()
+    deleteTodo(index)
+  })
   li.innerHTML = `
     <span class="todo ${todo.done ? 'done' : ''}"></span>
     <p>${todo.text}</p>
   `
+  li.append(btnDel)
   return li
 }
 
 function addTodo(text) {
-  /* add a new task to the table todos 
-  with the text entered in the field
-  and the property done to false */
   todos.push({ text, done: false })
+  displayTodo()
+}
+
+function deleteTodo(index) {
+  todos.splice(index, 1)
   displayTodo()
 }
 
