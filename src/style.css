@@ -10,3 +10,7 @@ body, .container, form, li {
 p {
   color: cornflowerblue;
 }
+
+.done + p {
+  color: darkseagreen;
+}
