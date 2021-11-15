@@ -1,0 +1,8 @@
+body, .container, form, li {
+  display: flex;
+}
+
+.container {
+  width: 500px;
+  flex-direction: column;
+}
