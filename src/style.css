@@ -1,16 +1,137 @@
+* body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  margin-bottom: 0px;
+  max-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #eee;
+}
+
 body, .container, form, li {
   display: flex;
 }
 
 .container {
+  margin: 1rem auto 1rem;
   width: 500px;
+  max-width: 80vw;
+  padding: 1.33rem;
+  display: flex;
   flex-direction: column;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  background-color: #eee;
+  align-items: center;
+  box-shadow: 2px 2px 6px #eee, -10px -10px 20px #ffffff;
+}
+
+form, li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 100%;
+}
+
+input {
+  color: dodgerblue;
+  font-size: 1rem;
+  outline: 0;
+  border: 1px solid #ddd;
+}
+
+p, input {
+  padding: 8px 15px;
+  border-radius: 5px;
+}
+
+form input {
+  background-color: white;
+  max-width: 330px;
+  width: 100%;
+  margin: 0;
+}
+
+li input {
+  width: 100%;
+  height: 20px;
+  border: 1px solid #afff00;
 }
 
 p {
   color: cornflowerblue;
+  background-color: #fff;
+  border: 1px solid #fff;
+  min-width: 224px;
+  width: 100%;
+  height: 20px;
 }
 
 .done + p {
   color: darkseagreen;
+  background-color: #eee;
+  border: 1px solid #fff;
+  text-decoration: line-through;
+}
+
+ul {
+  padding: 0;
+  margin-bottom: 0px;
+  list-style: none;
+  width: 100%;
+}
+
+li {
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  padding: 5px 0;
+  border-radius: 5px;
+}
+
+li>* {
+  margin: 5px 0;
+}
+
+li p {
+  flex: 1;
+}
+
+span {
+  margin: 0;
+}
+
+
+button {
+  height: 33px;
+  padding: 5px 15px;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 0 0 7px;
+  outline: 0;
+  box-shadow: 2px 2px 6px #eee, -10px -10px 20px #fff;
+}
+
+.success {
+  background-color: #cce3f9;
+}
+
+.danger {
+  background-color: #def7a9;
+}
+
+@media screen and (min-width: 565px) {
+  li input {
+  max-width: 212px;
+  }
 }
