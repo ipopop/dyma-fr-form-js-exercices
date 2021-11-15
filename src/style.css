@@ -6,3 +6,7 @@ body, .container, form, li {
   width: 500px;
   flex-direction: column;
 }
+
+p {
+  color: cornflowerblue;
+}

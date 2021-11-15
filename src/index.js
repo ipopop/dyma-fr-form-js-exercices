@@ -1,14 +1,33 @@
+'use strict'
+
 import './style.css'
 
 const ul = document.querySelector('ul')
+const form = document.querySelector('form')
+const input = document.querySelector('form > input')
+
+/* Create an event listener on the form for the "submit" event */
+form.addEventListener('submit', (e) => {
+  e.preventDefault()
+  const data = input.value
+  input.value = ''
+  addTodo(data)
+})
 
 const todos = [
-  { text: "je suis une todo", done: false },
-  { text: "faire du javascript", done: true }
+  { text: "je suis une todo", done: false, },
+  { text: "faire du javascript", done: true, },
 ]
 
-function createTodoElement(todo) {
-  // create : <span class="todo done?"></span> <p>todo txt</p>
+function displayTodo() {
+  const todosInsert = todos.map((todo, index) => {
+    return createTodoElement(todo, index)
+  })
+  ul.innerHTML = ''
+  ul.append(...todosInsert)
+}
+
+function createTodoElement(todo, index) {
   const li = document.createElement('li')
   li.innerHTML = `
     <span class="todo ${todo.done ? 'done' : ''}"></span>
@@ -17,13 +36,12 @@ function createTodoElement(todo) {
   return li
 }
 
-function displayTodo() {
-  // create HTML element with createTodoElement() & insert in DOM with ul.append()
-  const todosInsert = todos.map((todo, i) => {
-    return createTodoElement(todo, i)
-  })
-  ul.innerHTML = ''
-  ul.append(...todosInsert)
+function addTodo(text) {
+  /* add a new task to the table todos 
+  with the text entered in the field
+  and the property done to false */
+  todos.push({ text, done: false })
+  displayTodo()
 }
 
 displayTodo()
